@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Giang Thắng - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .clip-triangle img {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            border-radius: 0 !important;
+            box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+        }
+
+        .clip-hexagon img {
+            clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+            border-radius: 0 !important;
+            box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+        }
+
+        @keyframes showQR {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .animate-slideInRight {
+            animation: slideInRight 0.3s ease;
+        }
+
+        .flip-card {
+            perspective: 1200px;
+            width: 100%;
+            position: relative;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: auto;
+            transition: transform 0.6s cubic-bezier(.4, 2, .6, 1);
+            transform-style: preserve-3d;
+            min-height: 500px;
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            backface-visibility: hidden;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+        }
+
+        .flip-card-front {
+            z-index: 2;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-gray-50">
+    <header class="relative z-10 shadow-md sticky top-0 z-50 bg-white">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+            <h1 class="text-2xl font-bold text-indigo-600">Nguyễn Giang Thắng</h1>
+            <nav class="hidden md:flex">
+                <ul class="flex space-x-6 text-gray-700 font-medium">
+                    <li><a class="hover:text-indigo-600 transition" href="#about">Giới thiệu</a></li>
+                    <li><a class="hover:text-indigo-600 transition" href="#skills">Kỹ năng</a></li>
+                    <li><a class="hover:text-indigo-600 transition" href="#projects">Dự án</a></li>
+                    <li><a class="hover:text-indigo-600 transition" href="#contact">CV</a></li>
+                </ul>
+            </nav>
+            <button id="menuToggle" class="md:hidden text-3xl text-indigo-600 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-40 z-50 flex justify-end md:hidden hidden">
+            <div class="bg-white w-64 h-full shadow-lg p-6 relative animate-slideInRight">
+                <button id="closeMenu"
+                    class="absolute top-4 right-4 text-2xl text-gray-500 hover:text-red-500">×</button>
+                <ul class="flex flex-col space-y-6 mt-12 text-gray-700 font-medium">
+                    <li><a href="#about" class="hover:text-indigo-600 transition">Giới thiệu</a></li>
+                    <li><a href="#skills" class="hover:text-indigo-600 transition">Kỹ năng</a></li>
+                    <li><a href="#projects" class="hover:text-indigo-600 transition">Dự án</a></li>
+                    <li><a href="#contact" class="hover:text-indigo-600 transition">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-5xl mx-auto px-6 py-12">
+        <section class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 mb-20" id="about">
+            <div class="flex-shrink-0 w-48 h-48 overflow-hidden shadow-lg transition-all duration-700 ease-in-out rounded-full"
+                id="avatarShape">
+                <img alt="Ảnh chân dung của một người đàn ông Việt Nam trẻ tuổi, mặc áo sơ mi trắng, cười tươi, nền màu sáng"
+                    class="w-full h-full object-cover transition-all duration-700" height="300" src="/anh3.4.jpg"
+                    width="300">
+            </div>
+            <div class="max-w-xl text-center md:text-left transition-all duration-700" id="introText">
+                <h2 class="text-4xl font-extrabold text-indigo-600 mb-4">Xin chào, tôi là Nguyễn Giang Thắng</h2>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Tôi là một người đam mê công nghệ, đặc biệt quan tâm đến các khía cạnh phía sau của ứng dụng web.
+                    Với kiến thức nền tảng về lập trình web và sự tò mò khám phá thế giới backend,
+                    tôi mong muốn được học hỏi và đóng góp vào việc xây dựng các hệ thống mạnh mẽ và hiệu quả.
+                    Trong tương lai, tôi hướng tới mục tiêu trở thành một Fullstack Developer,
+                    có khả năng xây dựng toàn diện các ứng dụng web. Tôi tin rằng với sự nhiệt huyết và tinh thần học
+                    hỏi nhanh,
+                    tôi sẽ nhanh chóng làm quen và phát triển trong vai trò thực tập sinh backend,
+                    đây sẽ là một bước đệm quan trọng trên con đường trở thành một Fullstack chuyên nghiệp.
+                </p>
+                <div class="flex justify-center md:justify-start gap-6 mt-4">
+                    <a href="https://www.facebook.com/share/191BtN47Hr/" target="_blank" rel="noopener noreferrer"
+                        class="text-blue-600 hover:text-blue-800 text-3xl transition" aria-label="Facebook">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://github.com/thangpo" target="_blank" rel="noopener noreferrer"
+                        class="text-gray-800 hover:text-black text-3xl transition" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/th%E1%BA%AFng-nguy%E1%BB%85n-6395a6354?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank" rel="noopener noreferrer"
+                        class="text-blue-700 hover:text-blue-900 text-3xl transition" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" id="showQR" class="text-blue-700 hover:text-blue-900 text-3xl transition">
+                        <img src="https://th.bing.com/th/id/OIP.xW2F3TvZmbupU73ecvsm-QHaHB?cb=iwc2&rs=1&pid=ImgDetMain"
+                            alt="Zalo Icon" style="width: 28px; height: 28px; margin-top: 3px">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20" id="skills">
+            <h3 class="text-3xl font-bold text-indigo-600 mb-8 text-center">Kỹ năng của tôi</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-4xl mx-auto" id="skillsGrid">
+                
+            </div>
+            <div class="text-center mt-12 text-gray-600">
+                <p>🎵 Click vào bất kỳ skill nào để xem hiệu ứng 3D music wave</p>
+            </div>
+        </section>
+
+        <section class="mb-20" id="projects">
+            <h3 class="text-3xl font-bold text-indigo-600 mb-8 text-center">Một số dự án tiêu biểu</h3>
+            <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto" id="projectsGrid">
+                
+            </div>
+        </section>
+
+        <section class="mb-20" id="work-experience">
+            <h3 class="text-3xl font-bold text-indigo-600 mb-8 text-center">Kinh nghiệm làm việc</h3>
+            <div class="flex flex-col items-center">
+                <div class="mb-6 text-center">
+                    <div class="text-xl font-bold text-indigo-700">CÔNG TY CỔ PHẦN IKU STUDIOS</div>
+                    <div class="text-gray-500 text-sm">Thực tập sinh Backend Developer</div>
+                </div>
+                <div class="relative flex justify-center items-center w-full max-w-2xl" style="min-height: 240px">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-2 bg-indigo-400 rounded"></div>
+                    <div class="absolute left-0 top-0 flex flex-col items-end h-full justify-between w-1/2 pr-16">
+                        <div class="flex flex-col items-end">
+                            <div class="bg-indigo-600 w-6 h-6 rounded-full mb-2 border-4 border-white shadow-lg"></div>
+                            <div class="text-base text-gray-700 font-bold">Tháng 1-2</div>
+                            <div class="text-sm text-gray-500 max-w-[180px] text-right">Làm quen môi trường, học quy
+                                trình, tham gia dự án nhỏ.</div>
+                        </div>
+                        <div class="flex flex-col items-end">
+                            <div class="bg-indigo-600 w-6 h-6 rounded-full mb-2 border-4 border-white shadow-lg"></div>
+                            <div class="text-base text-gray-700 font-bold">Tháng 4-5</div>
+                            <div class="text-sm text-gray-500 max-w-[180px] text-right">Tham gia phát triển chức năng
+                                chính, tối ưu code, báo cáo kết quả.</div>
+                        </div>
+                    </div>
+                    <div class="absolute right-0 top-0 flex flex-col items-start h-full justify-between w-1/2 pl-16">
+                        <div class="flex flex-col items-start mt-12">
+                            <div class="bg-indigo-600 w-6 h-6 rounded-full mb-2 border-4 border-white shadow-lg"></div>
+                            <div class="text-base text-gray-700 font-bold">Tháng 3-4</div>
+                            <div class="text-sm text-gray-500 max-w-[180px]">Học framework, làm việc nhóm, viết tài
+                                liệu.</div>
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <div class="bg-indigo-600 w-6 h-6 rounded-full mb-2 border-4 border-white shadow-lg"></div>
+                            <div class="text-base text-gray-700 font-bold">Tháng 5-6</div>
+                            <div class="text-sm text-gray-500 max-w-[180px]">Triển khai sản phẩm, viết báo cáo, chuyển
+                                giao lại công việc</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto mb-20" id="contact">
+            <h3 class="text-3xl font-bold text-indigo-600 mb-6 text-center">CV của tôi</h3>
+            <div class="relative w-full h-[900px] mx-auto flex justify-center items-center cursor-pointer" id="cvCard">
+                <div class="transition-transform duration-700 w-[600px] h-[860px] relative"
+                    style="transform-style: preserve-3d;">
+                    <div
+                        class=" w-full h-full top-0 left-0 rounded-xl shadow-lg bg-white overflow-hidden flex items-center justify-center backface-hidden">
+                        <img src="./3.png" alt="CV Mặt trước" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute w-full h-full top-0 left-0 rounded-xl shadow-lg bg-white overflow-hidden flex items-center justify-center backface-hidden"
+                        style="transform: rotateY(180deg);">
+                        <img src="./4.png" alt="CV Mặt sau" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mt-6">
+                <a href="./NguyenGiangThang.pdf" download
+                    class="inline-flex items-center bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition">
+                    <i class="fas fa-download mr-2"></i>Tải xuống CV (PDF)
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="relative z-10 bg-indigo-600 text-white py-6 mt-12">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <p>© 2024 Nguyễn Giang Thắng. Bản quyền được bảo lưu bởi TG.</p>
+        </div>
+    </footer>
+
+    <div id="qrModal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
+        <div
+            class="bg-white rounded-lg shadow-lg p-6 relative transition-all duration-500 ease-out transform scale-90 opacity-0 animate-showQR">
+            <button id="closeQR" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl">×</button>
+            <img src="/zalo.jpg" alt="QR Zalo" class="w-64 h-64 object-contain">
+            <div class="text-center mt-2 text-gray-700 font-semibold">Quét mã QR để kết bạn Zalo</div>
+        </div>
+    </div>
+    <audio id="audioPlayer"></audio>
+    <canvas id="musicWaveCanvas" width="120" height="120" class="absolute inset-0 pointer-events-none"
+        style="filter: blur(0.3px); display: none;"></canvas>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
