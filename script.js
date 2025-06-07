@@ -87,7 +87,7 @@ skills.forEach((skill, idx) => {
             document.getElementById(`wave-${idx}`).style.display = 'block';
             audioPlayer.src = skill.music;
             audioPlayer.currentTime = 0;
-            audioPlayer.play().catch(() => {});
+            audioPlayer.play().catch(() => { });
             if (!audioCtx) {
                 audioCtx = new (window.AudioContext || window.webkitAudioContext)();
                 analyser = audioCtx.createAnalyser();
@@ -247,4 +247,87 @@ closeQR.addEventListener('click', () => {
 cvCard.addEventListener('click', () => {
     const inner = cvCard.querySelector('div');
     inner.style.transform = inner.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+
+    document.querySelectorAll('.hidden-element').forEach(element => {
+        observer.observe(element);
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const timeline = entry.target.querySelector('.relative');
+                if (timeline) {
+                    const items = timeline.querySelectorAll('.timeline-item');
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add(item.closest('.left-0') ? 'left' : 'right');
+                            item.classList.add('animate');
+                        }, index * 300); 
+                    });
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    const workExperience = document.getElementById('work-experience');
+    if (workExperience) {
+        observer.observe(workExperience);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const title = "Xin chào, tôi là Nguyễn Giang Thắng";
+    const titleElement = document.getElementById('titleText');
+    titleElement.innerHTML = title.split('')
+    .map((char, i) => {
+        if (char === ' ') {
+            return `<span class="char" style="animation-delay: ${i * 0.05}s">&nbsp;</span>`;
+        }
+        return `<span class="char" style="animation-delay: ${i * 0.05}s">${char}</span>`;
+    })
+    .join('');
+
+    const content = [
+        "Tôi là một người đam mê công nghệ, đặc biệt quan tâm đến các khía cạnh phía sau của ứng dụng web.",
+        "Với kiến thức nền tảng về lập trình web và sự tò mò khám phá thế giới backend, tôi mong muốn được học hỏi và đóng góp vào việc xây dựng các hệ thống mạnh mẽ và hiệu quả.",
+        "Trong tương lai, tôi hướng tới mục tiêu trở thành một Fullstack Developer, có khả năng xây dựng toàn diện các ứng dụng web.",
+        "Tôi tin rằng với sự nhiệt huyết và tinh thần học hỏi nhanh, tôi sẽ nhanh chóng làm quen và phát triển trong vai trò thực tập sinh backend, đây sẽ là một bước đệm quan trọng trên con đường trở thành một Fullstack chuyên nghiệp."
+    ];
+
+    const contentElement = document.getElementById('contentText');
+    contentElement.innerHTML = content.map((line, i) => 
+        `<p class="text-lg leading-relaxed text-gray-700 line" style="animation-delay: ${i * 0.3 + title.length * 0.05}s">${line}</p>`
+    ).join('');
+
+    const socialIcons = document.querySelectorAll('.social-icon');
+    socialIcons.forEach((icon, i) => {
+        icon.style.animationDelay = `${i * 0.2 + content.length * 0.3 + title.length * 0.05}s`;
+    });
 });
