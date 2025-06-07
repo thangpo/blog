@@ -8,17 +8,17 @@ const shapes = [
 ];
 
 const skills = [
-    { name: 'HTML5', icon: '<i class="fab fa-html5 text-6xl text-orange-600 mb-3"></i>', music: './music/tg1.m4a', bgIcon: '<img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" class="w-72 h-72 opacity-20" alt="HTML5">' },
-    { name: 'CSS3', icon: '<i class="fab fa-css3-alt text-6xl text-blue-600 mb-3"></i>', music: './music/tg2.m4a', bgIcon: '<img src="https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/css3-512.png" class="w-72 h-72 opacity-20" alt="CSS3">' },
-    { name: 'JavaScript', icon: '<i class="fab fa-js-square text-6xl text-yellow-400 mb-3"></i>', music: './music/tg3.mp3', bgIcon: '<img src="https://www.clipartmax.com/png/middle/470-4707396_javascript-icon-html-css-js-icons.png" class="w-72 h-72 opacity-20" alt="JavaScript">' },
-    { name: 'React', icon: '<i class="fab fa-react text-6xl text-cyan-500 mb-3"></i>', music: './music/tg4.mp3', bgIcon: '<img src="https://th.bing.com/th/id/OIP.9485Ti-M1KbzT9K4ZShMdAHaHO?rs=1&pid=ImgDetMain" class="w-72 h-72 opacity-20" alt="React">' },
-    { name: 'Laravel', icon: '<img src="https://logospng.org/download/laravel/logo-laravel-icon-1024.png" class="w-16 h-16 mb-3" alt="Laravel">', music: './music/tg5.m4a', bgIcon: '<img src="https://logospng.org/download/laravel/logo-laravel-icon-1024.png" class="w-72 h-72 opacity-20" alt="Laravel">' },
-    { name: 'PHP', icon: '<img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3259795/php-icon-md.png" class="w-16 h-16 mb-3" alt="PHP">', music: './music/tg6.mp3', bgIcon: '<img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3259795/php-icon-md.png" class="w-72 h-72 opacity-20" alt="PHP">' },
-    { name: 'Git', icon: '<i class="fab fa-git-alt text-6xl text-red-600 mb-3"></i>', music: './music/tg7.mp3', bgIcon: '<img src="https://th.bing.com/th/id/OIP.lhH2AodxozEbYxSDLz8BUAHaEK?rs=1&pid=ImgDetMain" class="w-100 h-72 opacity-20" alt="Git">' },
-    { name: 'MySQL', icon: '<img src="https://th.bing.com/th/id/OIP.63jNc3AqvI3loUog55YBhwHaHa?rs=1&pid=ImgDetMain" class="w-16 h-16 mb-3" alt="MySQL">', music: './music/tg8.mp3', bgIcon: '<img src="https://th.bing.com/th/id/OIP.63jNc3AqvI3loUog55YBhwHaHa?rs=1&pid=ImgDetMain" class="w-72 h-72 opacity-20" alt="MySQL">' },
-    { name: 'Github', icon: '<img src="https://logowik.com/content/uploads/images/github9775.jpg" class="w-16 h-12 mb-3" alt="Github">', music: './music/tg9.mp3', bgIcon: '<img src="https://logowik.com/content/uploads/images/github9775.jpg" class="w-72 h-56 opacity-20" alt="Github">' },
-    { name: 'Bootstrap', icon: '<img src="https://th.bing.com/th/id/OIP.KTq5K5E3QeLVrm71FR0w8gHaHa?rs=1&pid=ImgDetMain" class="w-16 h-16 mb-3" alt="Bootstrap">', music: './music/tg10.mp3', bgIcon: '<img src="https://www.pinclipart.com/picdir/middle/35-353932_bootstrap-bootstrap-4-logo-png-clipart.png" class="w-72 h-72 opacity-20" alt="Bootstrap">' },
-    { name: 'Tailwind', icon: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png?20230715030042" class="w-16 h-12 mb-3" alt="Tailwind">', music: './music/tg11.mp3', bgIcon: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png?20230715030042" class="w-72 h-56 opacity-20" alt="Tailwind">' },
+    { name: 'HTML5', icon: '<i class="fab fa-html5 text-6xl text-orange-600 mb-3"></i>', music: './music/tg1.m4a', bgIcon: '<img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" class="w-72 h-72 opacity-40" alt="HTML5">' },
+    { name: 'CSS3', icon: '<i class="fab fa-css3-alt text-6xl text-blue-600 mb-3"></i>', music: './music/tg2.m4a', bgIcon: '<img src="https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/css3-512.png" class="w-72 h-72 opacity-40" alt="CSS3">' },
+    { name: 'JavaScript', icon: '<i class="fab fa-js-square text-6xl text-yellow-400 mb-3"></i>', music: './music/tg3.mp3', bgIcon: '<img src="https://www.clipartmax.com/png/middle/470-4707396_javascript-icon-html-css-js-icons.png" class="w-72 h-72 opacity-40" alt="JavaScript">' },
+    { name: 'React', icon: '<i class="fab fa-react text-6xl text-cyan-500 mb-3"></i>', music: './music/tg4.mp3', bgIcon: '<img src="https://th.bing.com/th/id/OIP.9485Ti-M1KbzT9K4ZShMdAHaHO?rs=1&pid=ImgDetMain" class="w-72 h-72 opacity-40" alt="React">' },
+    { name: 'Laravel', icon: '<img src="https://logospng.org/download/laravel/logo-laravel-icon-1024.png" class="w-16 h-16 mb-3" alt="Laravel">', music: './music/tg5.m4a', bgIcon: '<img src="https://logospng.org/download/laravel/logo-laravel-icon-1024.png" class="w-72 h-72 opacity-40" alt="Laravel">' },
+    { name: 'PHP', icon: '<img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3259795/php-icon-md.png" class="w-16 h-16 mb-3" alt="PHP">', music: './music/tg6.mp3', bgIcon: '<img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3259795/php-icon-md.png" class="w-72 h-72 opacity-40" alt="PHP">' },
+    { name: 'Git', icon: '<i class="fab fa-git-alt text-6xl text-red-600 mb-3"></i>', music: './music/tg7.mp3', bgIcon: '<img src="https://th.bing.com/th/id/OIP.lhH2AodxozEbYxSDLz8BUAHaEK?rs=1&pid=ImgDetMain" class="w-100 h-72 opacity-40" alt="Git">' },
+    { name: 'MySQL', icon: '<img src="https://th.bing.com/th/id/OIP.63jNc3AqvI3loUog55YBhwHaHa?rs=1&pid=ImgDetMain" class="w-16 h-16 mb-3" alt="MySQL">', music: './music/tg8.mp3', bgIcon: '<img src="https://th.bing.com/th/id/OIP.63jNc3AqvI3loUog55YBhwHaHa?rs=1&pid=ImgDetMain" class="w-72 h-72 opacity-40" alt="MySQL">' },
+    { name: 'Github', icon: '<img src="https://logowik.com/content/uploads/images/github9775.jpg" class="w-16 h-12 mb-3" alt="Github">', music: './music/tg9.mp3', bgIcon: '<img src="https://logowik.com/content/uploads/images/github9775.jpg" class="w-72 h-56 opacity-40" alt="Github">' },
+    { name: 'Bootstrap', icon: '<img src="https://th.bing.com/th/id/OIP.KTq5K5E3QeLVrm71FR0w8gHaHa?rs=1&pid=ImgDetMain" class="w-16 h-16 mb-3" alt="Bootstrap">', music: './music/tg10.mp3', bgIcon: '<img src="https://www.pinclipart.com/picdir/middle/35-353932_bootstrap-bootstrap-4-logo-png-clipart.png" class="w-72 h-72 opacity-40" alt="Bootstrap">' },
+    { name: 'Tailwind', icon: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png?20230715030042" class="w-16 h-12 mb-3" alt="Tailwind">', music: './music/tg11.mp3', bgIcon: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png?20230715030042" class="w-72 h-56 opacity-40" alt="Tailwind">' },
 ];
 
 const projects = [
@@ -73,10 +73,24 @@ skills.forEach((skill, idx) => {
         </div>
         <span class="text-lg font-semibold transition text-gray-800 group-hover:text-indigo-600">${skill.name}</span>
     `;
+
+    const bgContainer = document.createElement('div');
+    bgContainer.id = `skill-bg-${idx}`;
+    bgContainer.innerHTML = skill.bgIcon;
+    bgContainer.className = 'fixed inset-0 w-full h-full opacity-0 transition-opacity duration-500 pointer-events-none -z-10';
+    document.body.appendChild(bgContainer);
+
     div.addEventListener('click', () => {
+        document.querySelectorAll('[id^="skill-bg-"]').forEach(bg => {
+            bg.classList.remove('opacity-40');
+            bg.classList.add('opacity-0');
+        });
+
         if (playingIndex === idx) {
             playingIndex = null;
             document.getElementById(`wave-${idx}`).style.display = 'none';
+            document.getElementById(`skill-bg-${idx}`).classList.remove('opacity-40');
+            document.getElementById(`skill-bg-${idx}`).classList.add('opacity-0');
             audioPlayer.pause();
             audioPlayer.currentTime = 0;
             cancelAnimationFrame(rafId);
@@ -85,6 +99,8 @@ skills.forEach((skill, idx) => {
             playingIndex = idx;
             document.querySelectorAll('[id^="wave-"]').forEach(w => w.style.display = 'none');
             document.getElementById(`wave-${idx}`).style.display = 'block';
+            document.getElementById(`skill-bg-${idx}`).classList.remove('opacity-0');
+            document.getElementById(`skill-bg-${idx}`).classList.add('opacity-40');
             audioPlayer.src = skill.music;
             audioPlayer.currentTime = 0;
             audioPlayer.play().catch(() => { });
@@ -333,15 +349,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // ...existing code...
-
-    // Dark mode functionality
     const darkModeToggle = document.getElementById('darkModeToggle');
     const darkModeTransition = document.getElementById('darkModeTransition');
     const html = document.documentElement;
-    
-    // Check saved preference
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
     if (isDarkMode) {
         html.classList.add('dark');
     }
@@ -355,7 +367,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const isDark = html.classList.contains('dark');
         darkModeTransition.classList.add('active');
 
-        // Wait for transition to complete before toggling class
+        darkModeToggle.style.pointerEvents = 'none';
+
         setTimeout(() => {
             if (isDark) {
                 html.classList.remove('dark');
@@ -365,11 +378,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.setItem('darkMode', 'true');
             }
 
-            // Remove transition overlay
             setTimeout(() => {
                 darkModeTransition.classList.remove('active');
                 isTransitioning = false;
-            }, 500); // Half of transition duration
-        }, 500); // Half of transition duration
+                darkModeToggle.style.pointerEvents = 'auto';
+            }, 500);
+        }, 500);
     });
 });
