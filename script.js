@@ -331,3 +331,45 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.style.animationDelay = `${i * 0.2 + content.length * 0.3 + title.length * 0.05}s`;
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // ...existing code...
+
+    // Dark mode functionality
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const darkModeTransition = document.getElementById('darkModeTransition');
+    const html = document.documentElement;
+    
+    // Check saved preference
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (isDarkMode) {
+        html.classList.add('dark');
+    }
+
+    let isTransitioning = false;
+
+    darkModeToggle.addEventListener('click', () => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        const isDark = html.classList.contains('dark');
+        darkModeTransition.classList.add('active');
+
+        // Wait for transition to complete before toggling class
+        setTimeout(() => {
+            if (isDark) {
+                html.classList.remove('dark');
+                localStorage.setItem('darkMode', 'false');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('darkMode', 'true');
+            }
+
+            // Remove transition overlay
+            setTimeout(() => {
+                darkModeTransition.classList.remove('active');
+                isTransitioning = false;
+            }, 500); // Half of transition duration
+        }, 500); // Half of transition duration
+    });
+});
