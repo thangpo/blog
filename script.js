@@ -19,6 +19,7 @@ const skills = [
     { name: 'Github', icon: '<img src="https://logowik.com/content/uploads/images/github9775.jpg" class="w-16 h-12 mb-3" alt="Github">', music: './music/tg9.mp3', bgIcon: '<img src="https://logowik.com/content/uploads/images/github9775.jpg" class="w-72 h-56 opacity-40" alt="Github">' },
     { name: 'Bootstrap', icon: '<img src="https://th.bing.com/th/id/OIP.KTq5K5E3QeLVrm71FR0w8gHaHa?rs=1&pid=ImgDetMain" class="w-16 h-16 mb-3" alt="Bootstrap">', music: './music/tg10.mp3', bgIcon: '<img src="https://www.pinclipart.com/picdir/middle/35-353932_bootstrap-bootstrap-4-logo-png-clipart.png" class="w-72 h-72 opacity-40" alt="Bootstrap">' },
     { name: 'Tailwind', icon: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png?20230715030042" class="w-16 h-12 mb-3" alt="Tailwind">', music: './music/tg11.mp3', bgIcon: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png?20230715030042" class="w-72 h-56 opacity-40" alt="Tailwind">' },
+    { name: 'WordPress', icon: '<img src="https://cdn3.iconfinder.com/data/icons/flat-icons-web/40/WordPress-512.png" class="w-16 h-12 mb-3" alt="Tailwind">', music: './music/tg11.mp3', bgIcon: '<img src="https://cdn3.iconfinder.com/data/icons/flat-icons-web/40/WordPress-512.png" class="w-72 h-56 opacity-40" alt="WordPress">' },
 ];
 
 const projects = [
